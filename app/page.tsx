@@ -27,7 +27,7 @@ import { notify, failure } from "@/utilits/toasts/toast";
 import Image from "next/image";
 import tngsLogo from "../utilits/img/tngslogo.png";
 import { Height } from "@mui/icons-material";
-import { ImageStyle, MyComponent } from "../components/ImageStyle";
+import { ImageStyle, MyComponent } from "./components/ImageStyle";
 
 YupPassword(yup); // for password validation
 const validationSchema = yup.object({
