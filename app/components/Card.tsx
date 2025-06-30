@@ -77,7 +77,7 @@ const ImageCard = (props: any) => {
   );
   const fetchPlayerReports = async (playerId: string) => {
     try {
-       const response = await axios.get(`http://localhost:3002/player-reports/${playerId}`, {
+       const response = await axios.get(`https://trackit-backend-api.onrender.com/player-reports/${playerId}`, {
         headers: {
           Authorization: token
         }

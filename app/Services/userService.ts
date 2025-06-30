@@ -54,7 +54,7 @@ interface reportResponse {
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl:   
- 'http://localhost:3002', prepareHeaders: (headers, { getState }) => {
+ 'https://trackit-backend-api.onrender.com', prepareHeaders: (headers, { getState }) => {
   const token = (getState() as RootState).profileReducer.token;
   // If we have a token set in state, let's assume that we should be passing it.
   if (token) {
