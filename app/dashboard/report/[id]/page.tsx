@@ -251,7 +251,8 @@ export default function ReportPage({ params }: { params: { id: string } }) {
   const supabaseBaseUrl = 'https://tnlczbfzxyxxtfytyihs.supabase.co/storage/v1/object/public/images/';
   const profileImage = data.profile ? supabaseBaseUrl + data.profile : '/utilits/img/player1.png';
   const logoImage = data.logo ? supabaseBaseUrl + data.logo : '/utilits/img/clublogo.png';
-  console.log(data)
+  console.log('Report profileImage URL:', profileImage);
+  console.log('Report logoImage URL:', logoImage);
   return (
     <ThemeProvider theme={theme}>
       <Box className='absolute left-10 top-3 z-10'><IconButton sx={{color:"white"}} onClick={()=>router.push('/dashboard')} ><ArrowBackIcon/></IconButton></Box>
@@ -311,34 +312,28 @@ export default function ReportPage({ params }: { params: { id: string } }) {
               left: "-.7rem",
             }}
           />
-          <Box
-            sx={{
-              backgroundImage: `url(${profileImage})`,
-              width: "45%",
-              height: "59%",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              position: "absolute",
-              zIndex: 2,
-              top: "5.89rem",
-              left: "0.4rem",
-            }}
-          />
-          <Box
-            sx={{
-              backgroundImage: `url(${logoImage})`,
-              width: "10rem",
-              height: "10rem",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              position: "absolute",
-              zIndex: 1,
-              top: "23.5rem",
-              right: "11rem",
-            }}
-          />
+          <img src={profileImage} alt="Profile" style={{
+            width: '45%',
+            height: '59%',
+            objectFit: 'cover',
+            position: 'absolute',
+            zIndex: 2,
+            top: '5.89rem',
+            left: '0.4rem',
+            borderRadius: '50%',
+            backgroundColor: '#add8e6',
+          }} />
+          <img src={logoImage} alt="Logo" style={{
+            width: '10rem',
+            height: '10rem',
+            objectFit: 'cover',
+            position: 'absolute',
+            zIndex: 1,
+            top: '23.5rem',
+            right: '11rem',
+            borderRadius: '50%',
+            backgroundColor: '#add8e6',
+          }} />
           <Grid sx={{ height: "5rem" }}>
             <Grid
               sx={{

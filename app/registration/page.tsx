@@ -1,6 +1,4 @@
 "use client";
-export const dynamic = "force-dynamic";
-
 import React, { useLayoutEffect, useState } from "react";
 import type { RootState } from "../../lib/store";
 import { useSelector, useDispatch } from "react-redux";
@@ -29,7 +27,7 @@ import image from "../../utilits/img/footballground1.png";
 import { Padding } from "@mui/icons-material";
 import axios from "axios";
 import { notify, failure } from "@/utilits/toasts/toast";
-import { ImageStyle } from "../components/ImageStyle";
+import { ImageStyle } from "../page";
 import Image from "next/image";
 
 YupPassword(yup); // for password validation
@@ -68,32 +66,21 @@ export default function Counter() {
           `${process.env.NEXT_PUBLIC_BASE_URL}/userregister`,
           values
         );
-
         if (response.data.status === 201) {
           dispatch(setToken(response.data.token));
           dispatch(setEmail(response.data.user.email));
-          dispatch(setName(response.data.user.name));
+          dispatch(setName(response.data.user.name))
           dispatch(setisLogin(true));
-          notify("Registered successfully");
+          notify("login successfully");
           router.push("/dashboard");
         } else {
-          failure(response.data.msg || "Unexpected response from server");
+          failure(response.data.msg);
         }
-      } catch (error: any) {
-        if (axios.isAxiosError(error)) {
-          const errMsg =
-            error.response?.data?.msg ||
-            error.message ||
-            "Something went wrong with registration.";
-          failure(errMsg);
-        } else {
-          failure("Unexpected error occurred. Try again later.");
-        }
-        console.error("Registration Error:", error); // log actual error
-      } finally {
-        formik.resetForm();
+      } catch (error) {
+        alert("try after some time");
       }
-    }
+      formik.resetForm();
+    },
   });
   /* **************** formik form handling end **************** */
 

@@ -160,7 +160,15 @@ const ImageCard = (props: any) => {
         onClick={handleOpenDialog}
       >
 
-        <Box sx={imageBox(profileImage)} />
+        <img src={profileImage} alt="Profile" style={{
+          width: '90px',
+          height: '100px',
+          marginTop: '1.2rem',
+          marginBottom: '1rem',
+          borderRadius: '50%',
+          objectFit: 'cover',
+          backgroundColor: '#add8e6',
+        }} />
 
         <CardContent
           sx={{
