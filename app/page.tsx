@@ -26,6 +26,7 @@ import axios from "axios";
 import { notify, failure } from "@/utilits/toasts/toast";
 import Image from "next/image";
 import tngsLogo from "../utilits/img/tngslogo.png";
+import { ImageStyle, MyComponent } from "./components/ImageStyle";
 import { Height } from "@mui/icons-material";
 YupPassword(yup); // for password validation
 const validationSchema = yup.object({
@@ -362,45 +363,6 @@ export default function Counter() {
   /* **************** Right side image design  start **************** */
 }
 
-export const ImageStyle = ({
-  image,
-  size,
-  top,
-  left,
-}: {
-  image: string;
-  size: string;
-  top: string | number;
-  left: string | number;
-}): React.CSSProperties => {
-  return {
-    position: "absolute",
-    backgroundImage: `url(${image})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    borderRadius: "50%",
-    overflow: "hidden",
-    width: size,
-    height: size,
-    top: top,
-    left: left,
-  };
-};
-
-const MyComponent = () => {
-  return (
-    <div
-      style={ImageStyle({
-        image: "path-to-image.jpg",
-        size: "100px",
-        top: "50px",
-        left: "50px",
-      })}
-    >
-      {/* Content goes here */}
-    </div>
-  );
-};
 
 {
   /* **************** Right side image design  end **************** */

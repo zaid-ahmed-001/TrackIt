@@ -1,4 +1,6 @@
-import React from "react";
+// components/ImageStyle.tsx
+
+import React from 'react';
 
 export const ImageStyle = ({
   image,
@@ -20,8 +22,8 @@ export const ImageStyle = ({
     overflow: "hidden",
     width: size,
     height: size,
-    top,
-    left,
+    top: top,
+    left: left,
   };
 };
 
@@ -34,8 +36,6 @@ export const MyComponent = () => {
         top: "50px",
         left: "50px",
       })}
-    >
-      {/* Content goes here */}
-    </div>
+    />
   );
 };

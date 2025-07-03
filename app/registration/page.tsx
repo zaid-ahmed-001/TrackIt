@@ -27,7 +27,7 @@ import image from "../../utilits/img/footballground1.png";
 import { Padding } from "@mui/icons-material";
 import axios from "axios";
 import { notify, failure } from "@/utilits/toasts/toast";
-import { ImageStyle } from "../page";
+import { ImageStyle, MyComponent } from "../components/ImageStyle";
 import Image from "next/image";
 
 YupPassword(yup); // for password validation
